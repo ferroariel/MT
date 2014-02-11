@@ -1,0 +1,9 @@
+﻿
+Èstimado %userid%,
+
+Bienvenido a %sitio%!
+
+Cordialmente,
+
+El equipo de %sitio%
+%sitio_url%

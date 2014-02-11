@@ -1,0 +1,157 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="System.Web.Optimization" %>
+
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head id="Head1" runat="server">
+    <meta charset="iso-8859-1" />
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
+    <script src="/Scripts/foundation.min.js"></script>
+    <script src="/Scripts/app.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript">
+        //window.onerror = function (message, url, linenumber) {
+        //console.log(message +"\n"+ url +"\n"+ linenumber); 
+        //return true;
+        //}        
+    </script>
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server">
+        <title>Mercado Textil</title>
+    </asp:ContentPlaceHolder>
+    
+    <%: Styles.Render("~/css/gen")%>
+
+    <script src="/Scripts/modernizr.foundation.js"></script>
+    <script src="/Scripts/jquery.foundation.reveal.js"></script>
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if gte IE 9]>
+        <style type="text/css">
+            .gradient {filter: none;}
+        </style>
+    <![endif]-->
+</head>
+<body>
+    <div class="container navigation mt_enc">
+        <div class="centered">
+            <div class="row">
+                <div class="one columns">
+                </div>
+                <figure class="four columns">
+                    <a href="/">
+                        <img src="/Content/img/mt_ui_logo.png" alt="Mercado Textil - Nuestra Red Social" /></a>
+                </figure>
+                <div class="six mobile-six columns">
+                    <% Html.RenderPartial("LogOnUserControl"); %></div>
+                <div class="one columns">
+                </div>
+            </div>
+            <section class="row">
+                <div class="one columns">
+                </div>
+                <nav class="nine  columns ">
+                    <dl class="tabs principal">
+                        <dd class="comienzo">
+                            <a href="/" title="Volver a la página inicial"></a>
+                        </dd>
+                        <dd>
+                            <a href="/Directorio" title="Directorio de Empresas">Directorio</a></dd>
+                        <dd>
+                            <a href="/Empleo" title="Bolsa de Trabajo, Oportunidades de Empleo">Empleo</a></dd>
+                        <dd>
+                            <a href="/Organizaciones.html" title="Organizaciones del Sector">Organizaciones</a></dd>
+                        <dd>
+                            <a href="/Medios.html" title="Medios del Sector">Medios</a></dd>
+                    </dl>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            if (document.URL.toLowerCase().indexOf("/empleo") != -1) { $("dl.principal dd:nth-child(3)").addClass("active"); }
+                            else if (document.URL.toLowerCase().indexOf("/directorio") != -1) { $("dl.principal dd:nth-child(2)").addClass("active"); }
+                            else if (document.URL.toLowerCase().indexOf("/organizaciones") != -1) { $("dl.principal dd:nth-child(4)").addClass("active"); }
+                            else if (document.URL.toLowerCase().indexOf("/medios") != -1) { $("dl.principal dd:nth-child(5)").addClass("active"); }
+                            else if (document.URL.toLowerCase().indexOf("/mensajes") != -1) { $("dl.principal dd").removeClass("active"); }
+                            else if (document.URL.toLowerCase().indexOf("/usuarios") != -1) { $("dl.principal dd").removeClass("active"); }
+                            else { $("dl.principal dd:nth-child(1)").addClass("active"); $("#bsFrm").hide(); }
+                        });
+                    </script>
+                </nav>
+                <div class="two columns">
+                    <div class="row collapse">
+                        <% using (Html.BeginForm("Index", "Directorio", FormMethod.Get, new { @id = "bsFrm" }))
+                           {%>
+                        <div class="nine columns">
+                            <input type="text" name="buscar" id="b" <% 
+                            if (Request.QueryString["buscar"]!=null) { %>value="<%: Html.Raw(Request.QueryString["buscar"].ToString()) %>"
+                                <% }
+                            %> />
+                        </div>
+                        <div class="three columns">
+                            <a id="bsSch" class="button expand postfix icon-search"></a>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                $("#bsFrm").css({ "padding": 0 });
+                                $("#bsSch").click(function (e) {
+                                    e.preventDefault();
+                                    $("form#bsFrm").submit();
+                                });
+                            });
+                        </script>
+                        <%} %>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row" id="FixNavBar-anchor">
+    </div>
+    <div class="row master">
+        <div class="twelve columns">
+            <div class="row cuerpoprincipal">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                <asp:ContentPlaceHolder ID="BannerContent" runat="server">
+                    <div class="two columns">
+                        <script type="text/javascript"><!--
+                            google_ad_client = "pub-2526867026127947";
+                            /* MercadoTextil_1 */
+                            google_ad_slot = "2609258915";
+                            google_ad_width = 120;
+                            google_ad_height = 600;//-->
+                        </script>
+                        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+                    </div>
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="pie container">
+        <div class="row">
+            <p>
+                <span style="float: right">
+                    <a href="/elmah.axd">E</a> -
+                    <%: Html.ActionLink("U", "ActualizarIndice", "Home")%>                    -
+                    <%: Html.ActionLink("D", "BorrarIndice", "Home")%>
+                </span>
+                <%: String.Format("{0}", DateTime.Now.Year) %>
+                &copy; Mercado Textil (Sitio de Desarrollo) - <a href="/Legales.html">Notas Legales</a>
+                - <a href="/Terminos_de_Uso.html">Términos de Uso</a>
+            </p>
+        </div>
+    </footer>
+    <asp:ContentPlaceHolder ID="FooterHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="/Scripts/jquery.ba-dotimeout.min.js"></script>
+    <script src="/Scripts/jquery.isidle.js"></script>
+    <script src="/Scripts/jquery.tzineClock.js"></script>
+    <link rel="Stylesheet" type="text/css" href="/css/jquery.tzineClock.css" />
+    <img src="/Content/img/icon.beta.content.png" class="betav" alt="betaV" />
+    <%: Html.Partial("FixNavBar") %>
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿
+Estimado %userid%,
+
+Tu empresa %empresa%, recientemente agregada por tí, ya está disponible en nuestro sistema!
+
+Cordialmente,
+
+El equipo de %sitio%
+%sitio_url%

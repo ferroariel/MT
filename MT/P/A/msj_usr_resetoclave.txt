@@ -1,0 +1,10 @@
+﻿Estimado %userid%,
+
+Para dar de alta una nueva clave, por favor visita el siguiente vínculo:
+
+%reset_pass_url%
+
+Cordialmente,
+
+El equipo de %sitio%
+%sitio_url%

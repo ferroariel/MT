@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MT", "MT\MT.csproj", "{ED49343C-3DC5-4220-9C42-DC60E6023854}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C9EF338A-293C-45D4-8B33-E0D451F5AB2F}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		MT.vsmdi = MT.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ferroariel.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MT\\MT.csproj
+		SccProjectName1 = MT
+		SccLocalPath1 = MT
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = MT.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED49343C-3DC5-4220-9C42-DC60E6023854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED49343C-3DC5-4220-9C42-DC60E6023854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED49343C-3DC5-4220-9C42-DC60E6023854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED49343C-3DC5-4220-9C42-DC60E6023854}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

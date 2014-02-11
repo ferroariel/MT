@@ -1,0 +1,70 @@
+#fancyClock 
+{
+    /*display:inline-block;*/
+    /*width:75px !important;*/
+    /*margin:-14px 0 0 15px;*/
+    padding:0;
+    
+    }
+.clock
+{
+    height: 25px;
+    width: 25px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    background-color: #000;
+}
+.clock .rotate
+{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+}
+.rotate.right
+{
+    display: none;
+    z-index: 11;
+}
+.clock .bg, .clock .front
+{
+    width: 12px;
+    height: 25px;
+    background-color: #252525;
+    position: absolute;
+    top: 0;
+}
+.clock .display
+{
+    position: absolute;
+    width: 24px;    
+    z-index: 20;
+    font:normal normal 10px Tahoma !important;
+    color: #fff !important;    
+    text-align: center;
+    top: 6px;
+    left: 0;
+}
+.clock .bg.left
+{
+    left: 0;
+}
+.orange .bg.left, .green .bg.left, .blue .bg.left
+{
+    background: url(/Content/img/bg.png) no-repeat left top;
+}
+.clock .bg.right
+{
+    left: 13px;
+}
+.orange .bg.right, .green .bg.right, .blue .bg.right
+{
+    background: url(/Content/img/bg.png) no-repeat right top;
+}
+.clock .front.left
+{
+    left: 0;
+    z-index: 10;
+}

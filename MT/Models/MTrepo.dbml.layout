@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.75, 20.625" name="MTrepo">
+  <DataContextMoniker Name="/MTrepoDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cbe05f3b-0d0a-442a-a41b-ac81cc66c429" absoluteBounds="6.5, 8.875, 2, 1.5785953775048256">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe3bd04b-c393-433f-b269-6014b6e242a9" absoluteBounds="6.5150000005960464, 9.33500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9dad1e5-5c7c-4733-8b34-5f1610e0e73c" absoluteBounds="0.75, 4.875, 2, 1.3862939458340406">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_PROVINCIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f032e66-f8e0-488b-bafb-b31e29de08b1" absoluteBounds="0.76500000059604645, 5.33500000089407, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43e33846-3960-4396-8b8d-80215ff85654" absoluteBounds="6.5, 11.25, 2, 1.5785953775048256">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_TELEFONO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66b1a562-4919-430c-a14f-d890aefe98b0" absoluteBounds="6.5150000005960464, 11.71000000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="976b4167-2076-44ee-b922-5401bc9167de" absoluteBounds="0.75, 2, 2, 1.1939925123006105">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_PAISE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="558db693-9532-4837-92ab-be750b1be866" absoluteBounds="0.76500000059604645, 2.4600000008940697, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c006acb6-e363-471b-91b9-c406fc793c12" absoluteBounds="9.25, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMPRESA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fca8e779-22c4-48e8-b51e-a6a8918d50de" absoluteBounds="9.2650000005960464, 2.2100000008940697, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4ffaa20-90ea-4e9f-9145-635fd7ccdf34" absoluteBounds="9.25, 4.625, 2, 1.7708968091756105">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_USUARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6be7def2-dff7-44ec-953a-23a36f238d3d" absoluteBounds="9.2650000005960464, 5.08500000089407, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 8.875); (8.875 : 8.5); (8.875 : 5.51044840458781); (9.25 : 5.51044840458781)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_EMAIL/MT_EMAIL_MT_USUARIO" />
+      <nodes>
+        <classShapeMoniker Id="cbe05f3b-0d0a-442a-a41b-ac81cc66c429" />
+        <classShapeMoniker Id="c4ffaa20-90ea-4e9f-9145-635fd7ccdf34" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 12.0392976887524); (8.97916666666667 : 12.0392976887524 : JumpStart); (9.14583333333333 : 12.0392976887524 : JumpEnd); (9.46875 : 12.0392976887524); (9.46875 : 6.39589680917561)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_TELEFONO/MT_TELEFONO_MT_USUARIO" />
+      <nodes>
+        <classShapeMoniker Id="43e33846-3960-4396-8b8d-80215ff85654" />
+        <classShapeMoniker Id="c4ffaa20-90ea-4e9f-9145-635fd7ccdf34" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.25 : 3.32859537760417); (10.25 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_EMPRESA/MT_EMPRESA_MT_USUARIO" />
+      <nodes>
+        <classShapeMoniker Id="c006acb6-e363-471b-91b9-c406fc793c12" />
+        <classShapeMoniker Id="c4ffaa20-90ea-4e9f-9145-635fd7ccdf34" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="575e2930-678e-4a99-8a0b-ed8818a476cc" absoluteBounds="14.5, 1.375, 2, 1.3862939458340406">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMPRESAS_TAG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f005a02a-374e-485d-b27c-88fbc278c3c7" absoluteBounds="14.515000000596046, 1.8350000008940697, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2078f1c-d120-492c-b901-ee49e60bb6c4" absoluteBounds="9.25, 14.75, 2, 1.1939925123006105">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_TIPO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93710d4d-7546-45f5-b783-c5290993c865" absoluteBounds="9.2650000005960464, 15.21000000089407, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0a079554-b537-4817-b213-46168f59b8ce" absoluteBounds="11.75, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_TAG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc123c2c-8ceb-498c-80f4-52047013d9a0" absoluteBounds="11.765000000596046, 1.7100000008940697, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7cba4839-1ce2-4df6-9fba-bfc6b4ed4cb6" absoluteBounds="6.5, 18.25, 2, 2.1554996744791737">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_RECURSO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a19e067e-0f36-430f-ae01-a4d00c7afc72" absoluteBounds="6.5150000005960464, 18.71000000089407, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 19.3277498372396); (10.25 : 19.3277498372396); (10.25 : 15.9439925123006)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_RECURSO/MT_RECURSO_MT_TIPO" />
+      <nodes>
+        <classShapeMoniker Id="7cba4839-1ce2-4df6-9fba-bfc6b4ed4cb6" />
+        <classShapeMoniker Id="f2078f1c-d120-492c-b901-ee49e60bb6c4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0e053530-da81-4edb-a2c7-8d657afebf3c" absoluteBounds="3.5, 3.875, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_USUARIO_PERFIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00652eb3-5f72-483a-90c1-3bd522fba7e7" absoluteBounds="3.5150000005960464, 4.33500000089407, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.56814697291702); (3.5 : 5.56814697291702)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_PROVINCIA/MT_PROVINCIA_MT_USUARIO_PERFIL" />
+      <nodes>
+        <classShapeMoniker Id="d9dad1e5-5c7c-4733-8b34-5f1610e0e73c" />
+        <classShapeMoniker Id="0e053530-da81-4edb-a2c7-8d657afebf3c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 3.875); (4.5 : 3.37500000004967); (6.16666666666667 : 3.37500000004967 : JumpStart); (6.33333333333333 : 3.37500000004967 : JumpEnd); (8.875 : 3.37500000004967); (8.875 : 5.0364722022939); (9.25 : 5.0364722022939)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_USUARIO_PERFIL/MT_USUARIO_PERFIL_MT_USUARIO" />
+      <nodes>
+        <classShapeMoniker Id="0e053530-da81-4edb-a2c7-8d657afebf3c" />
+        <classShapeMoniker Id="c4ffaa20-90ea-4e9f-9145-635fd7ccdf34" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.59699625615031); (3.9687475 : 2.59699625615031); (3.9687475 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_PAISE/MT_PAISE_MT_USUARIO_PERFIL" />
+      <nodes>
+        <classShapeMoniker Id="976b4167-2076-44ee-b922-5401bc9167de" />
+        <classShapeMoniker Id="0e053530-da81-4edb-a2c7-8d657afebf3c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 2.06814697291702); (14.5 : 2.06814697291702)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_TAG/MT_TAG_MT_EMPRESAS_TAG" />
+      <nodes>
+        <classShapeMoniker Id="0a079554-b537-4817-b213-46168f59b8ce" />
+        <classShapeMoniker Id="575e2930-678e-4a99-8a0b-ed8818a476cc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cd64b469-633c-4f6c-a2bc-fc9f9be3048d" absoluteBounds="6.5, 3.625, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMPRESA_PERFIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70071274-8335-4257-90b8-91e259679807" absoluteBounds="6.5150000005960464, 4.08500000089407, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.19399251230061); (3.125 : 3.56899251230061); (3.125 : 3.00000000004967); (3.88541416666667 : 3.00000000004967 : JumpStart); (4.05208083333333 : 3.00000000004967 : JumpEnd); (5.875 : 3.00000000004967); (6.49999999995033 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_PAISE/MT_PAISE_MT_EMPRESA_PERFIL" />
+      <nodes>
+        <classShapeMoniker Id="976b4167-2076-44ee-b922-5401bc9167de" />
+        <classShapeMoniker Id="cd64b469-633c-4f6c-a2bc-fc9f9be3048d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 6.26129394583404); (1.75 : 7.379010416617); (6.5 : 7.379010416617)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_PROVINCIA/MT_PROVINCIA_MT_EMPRESA_PERFIL" />
+      <nodes>
+        <classShapeMoniker Id="d9dad1e5-5c7c-4733-8b34-5f1610e0e73c" />
+        <classShapeMoniker Id="cd64b469-633c-4f6c-a2bc-fc9f9be3048d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 3.68653746158813); (9.0625 : 3.12403746158813); (9.0625 : 3.5160953775545); (9.24999999995033 : 3.32859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_EMPRESA_PERFIL/MT_EMPRESA_PERFIL_MT_EMPRESA" />
+      <nodes>
+        <classShapeMoniker Id="cd64b469-633c-4f6c-a2bc-fc9f9be3048d" />
+        <classShapeMoniker Id="c006acb6-e363-471b-91b9-c406fc793c12" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8c0064b2-804d-4321-8f46-3ec25a83574b" absoluteBounds="0.75, 8.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMPRESA_SEGUIDORE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50d07526-190f-4e16-85b6-7cffd01f4247" absoluteBounds="0.76500000059604645, 8.58500000089407, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1740db3b-5d8a-4f0a-93d6-9b890a15e93e" absoluteBounds="6.5, 13.5, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_MENSAJE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="077d5415-d189-40e3-9fd1-3147c0a81981" absoluteBounds="6.5150000005960464, 13.96000000089407, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 13.5615374612777); (9.0625 : 12.9990374612777); (9.0625 : 5.98442460688171); (9.25 : 5.98442460688171)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_MENSAJE/MT_MENSAJE_MT_USUARIO" />
+      <nodes>
+        <classShapeMoniker Id="1740db3b-5d8a-4f0a-93d6-9b890a15e93e" />
+        <classShapeMoniker Id="c4ffaa20-90ea-4e9f-9145-635fd7ccdf34" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 15.3469962561503); (9.25 : 15.3469962561503)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_MENSAJE/MT_MENSAJE_MT_TIPO" />
+      <nodes>
+        <classShapeMoniker Id="1740db3b-5d8a-4f0a-93d6-9b890a15e93e" />
+        <classShapeMoniker Id="f2078f1c-d120-492c-b901-ee49e60bb6c4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bce22884-5585-49f9-bbee-16d0cda57693" absoluteBounds="0.75, 11.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMPLEO_TIPO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e85974c2-f286-4642-b910-8a6ee0c047fb" absoluteBounds="0.76500000059604645, 11.58500000089407, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1252ba7-1450-4a56-a06a-b8eee4e9cbef" absoluteBounds="11.75, 4.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMPLEO_CATEGORIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="997f1c51-6cc5-40fb-9cff-323a1637fff0" absoluteBounds="11.765000000596046, 4.58500000089407, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="867c2bfc-3739-4dfc-a8e7-0b259eafb4c0" absoluteBounds="9.75, 8.25, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMPLEO_OFERTA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d37762a0-4185-49b4-a6d0-760179a165bd" absoluteBounds="9.7650000005960464, 8.71000000089407, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff6b499d-0b1f-48b3-bb82-da056960461e" absoluteBounds="12.5, 8.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_EMPLEO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc0b1b38-ab48-4be7-872a-f4db805daf5c" absoluteBounds="12.515000000596046, 9.08500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.75 : 9.41429768880208); (12.5 : 9.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_EMPLEO_OFERTA/MT_EMPLEO_OFERTA_MT_EMPLEO" />
+      <nodes>
+        <classShapeMoniker Id="867c2bfc-3739-4dfc-a8e7-0b259eafb4c0" />
+        <classShapeMoniker Id="ff6b499d-0b1f-48b3-bb82-da056960461e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6fe420e3-6c19-4de0-9c0a-0d3b6b7f9789" absoluteBounds="6.5, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MTrepoDataContext/MT_VOTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed7cdd1a-a4f5-4fd3-b48d-5042ec179c9c" absoluteBounds="6.5150000000000006, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 2.03929768882692); (9.25 : 2.03929768882692)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MTrepoDataContext/MT_VOTO/MT_VOTO_MT_EMPRESA" />
+      <nodes>
+        <classShapeMoniker Id="6fe420e3-6c19-4de0-9c0a-0d3b6b7f9789" />
+        <classShapeMoniker Id="c006acb6-e363-471b-91b9-c406fc793c12" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

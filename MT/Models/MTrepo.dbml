@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MT" Class="MTrepoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=websoftserver;Initial Catalog=MT;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MTConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MT_EMAILS" Member="MT_EMAILs">
+    <Type Name="MT_EMAIL">
+      <Column Name="NRO_EMAIL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="XDE_EMAIL" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MT_EMAIL_MT_USUARIO" Member="MT_USUARIOs" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_USUARIO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_PROVINCIAS" Member="MT_PROVINCIAs">
+    <Type Name="MT_PROVINCIA">
+      <Column Name="XDE_PROVINCIA" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_PAIS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_PROVINCIA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="MT_PROVINCIA_MT_USUARIO_PERFIL" Member="MT_USUARIO_PERFILs" ThisKey="NRO_PROVINCIA" OtherKey="NRO_PROVINCIA" Type="MT_USUARIO_PERFIL" />
+      <Association Name="MT_PROVINCIA_MT_EMPRESA_PERFIL" Member="MT_EMPRESA_PERFILs" ThisKey="NRO_PROVINCIA" OtherKey="NRO_PROVINCIA" Type="MT_EMPRESA_PERFIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_TELEFONOS" Member="MT_TELEFONOs">
+    <Type Name="MT_TELEFONO">
+      <Column Name="NRO_TELEFONO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_TELEFONO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MT_TELEFONO_MT_USUARIO" Member="MT_USUARIOs" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_USUARIO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_PAISES" Member="MT_PAISEs">
+    <Type Name="MT_PAISE">
+      <Column Name="NRO_PAIS" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="XDE_PAIS" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="MT_PAISE_MT_USUARIO_PERFIL" Member="MT_USUARIO_PERFILs" ThisKey="NRO_PAIS" OtherKey="NRO_PAIS" Type="MT_USUARIO_PERFIL" />
+      <Association Name="MT_PAISE_MT_EMPRESA_PERFIL" Member="MT_EMPRESA_PERFILs" ThisKey="NRO_PAIS" OtherKey="NRO_PAIS" Type="MT_EMPRESA_PERFIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_EMPRESAS" Member="MT_EMPRESAs">
+    <Type Name="MT_EMPRESA">
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FEC_ALTA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FEC_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MT_EMPRESA_MT_USUARIO" Member="MT_USUARIOs" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_USUARIO" />
+      <Association Name="MT_EMPRESA_PERFIL_MT_EMPRESA" Member="MT_EMPRESA_PERFIL" ThisKey="NRO_EMPRESA" OtherKey="NRO_EMPRESA" Type="MT_EMPRESA_PERFIL" IsForeignKey="true" />
+      <Association Name="MT_VOTO_MT_EMPRESA" Member="MT_VOTO" ThisKey="NRO_EMPRESA" OtherKey="NRO_EMPRESA" Type="MT_VOTO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_USUARIOS" Member="MT_USUARIOs">
+    <Type Name="MT_USUARIO">
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EST_ACTIVADO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EST_HABILITADO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="XDE_CLAVE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="XDE_USERID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="MT_EMAIL_MT_USUARIO" Member="MT_EMAIL" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_EMAIL" IsForeignKey="true" />
+      <Association Name="MT_TELEFONO_MT_USUARIO" Member="MT_TELEFONO" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_TELEFONO" IsForeignKey="true" />
+      <Association Name="MT_EMPRESA_MT_USUARIO" Member="MT_EMPRESA" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_EMPRESA" IsForeignKey="true" />
+      <Association Name="MT_USUARIO_PERFIL_MT_USUARIO" Member="MT_USUARIO_PERFIL" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_USUARIO_PERFIL" IsForeignKey="true" />
+      <Association Name="MT_MENSAJE_MT_USUARIO" Member="MT_MENSAJE" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_MENSAJE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_EMPRESAS_TAGS" Member="MT_EMPRESAS_TAGs">
+    <Type Name="MT_EMPRESAS_TAG">
+      <Column Name="NRO_TAG_EMPRESA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_RUBRO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MT_TAG_MT_EMPRESAS_TAG" Member="MT_TAG" ThisKey="NRO_RUBRO" OtherKey="NRO_RUBRO" Type="MT_TAG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_TIPOS" Member="MT_TIPOs">
+    <Type Name="MT_TIPO">
+      <Column Name="NRO_TIPO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="XDE_TIPO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MT_RECURSO_MT_TIPO" Member="MT_RECURSO" ThisKey="NRO_TIPO" OtherKey="NRO_TIPO" Type="MT_RECURSO" IsForeignKey="true" />
+      <Association Name="MT_MENSAJE_MT_TIPO" Member="MT_MENSAJE" ThisKey="NRO_TIPO" OtherKey="NRO_TIPO" Type="MT_MENSAJE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_TAGS" Member="MT_TAGs">
+    <Type Name="MT_TAG">
+      <Column Name="NRO_RUBRO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_PADRE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OBS_NOMBRE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OBS_ADICIONAL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="MT_TAG_MT_EMPRESAS_TAG" Member="MT_EMPRESAS_TAGs" ThisKey="NRO_RUBRO" OtherKey="NRO_RUBRO" Type="MT_EMPRESAS_TAG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_RECURSOS" Member="MT_RECURSOs">
+    <Type Name="MT_RECURSO">
+      <Column Name="NRO_RECURSO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_TIPO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_ARCHIVO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NRO_GALERIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NRO_ORDEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MT_RECURSO_MT_TIPO" Member="MT_TIPOs" ThisKey="NRO_TIPO" OtherKey="NRO_TIPO" Type="MT_TIPO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_USUARIO_PERFIL" Member="MT_USUARIO_PERFILs">
+    <Type Name="MT_USUARIO_PERFIL">
+      <Column Name="NRO_USUARIO_PERFIL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_NOMBRES" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="XDE_APELLIDOS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FEC_NACIMIENTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OBS_DOMICILIO" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_CIUDAD" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_PROVINCIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_PAIS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_CP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="XDE_WEB" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="XDE_FACEBOOK" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="XDE_TWITTER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="MT_USUARIO_PERFIL_MT_USUARIO" Member="MT_USUARIOs" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_USUARIO" />
+      <Association Name="MT_PROVINCIA_MT_USUARIO_PERFIL" Member="MT_PROVINCIA" ThisKey="NRO_PROVINCIA" OtherKey="NRO_PROVINCIA" Type="MT_PROVINCIA" IsForeignKey="true" />
+      <Association Name="MT_PAISE_MT_USUARIO_PERFIL" Member="MT_PAISE" ThisKey="NRO_PAIS" OtherKey="NRO_PAIS" Type="MT_PAISE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_EMPRESA_PERFIL" Member="MT_EMPRESA_PERFILs">
+    <Type Name="MT_EMPRESA_PERFIL">
+      <Column Name="NRO_EMPRESA_PERFIL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_RAZONSOCIAL" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_CORTA" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="OBS_MEDIA" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MEM_LARGA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="XDE_CIUDAD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="XDE_DOMICILIO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="XDE_CP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="XDE_WEB" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="XDE_FACEBOOK" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="XDE_TWITTER" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NRO_PAIS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_PROVINCIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_LAT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="XDE_LON" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="MT_EMPRESA_PERFIL_MT_EMPRESA" Member="MT_EMPRESAs" ThisKey="NRO_EMPRESA" OtherKey="NRO_EMPRESA" Type="MT_EMPRESA" />
+      <Association Name="MT_PAISE_MT_EMPRESA_PERFIL" Member="MT_PAISE" ThisKey="NRO_PAIS" OtherKey="NRO_PAIS" Type="MT_PAISE" IsForeignKey="true" />
+      <Association Name="MT_PROVINCIA_MT_EMPRESA_PERFIL" Member="MT_PROVINCIA" ThisKey="NRO_PROVINCIA" OtherKey="NRO_PROVINCIA" Type="MT_PROVINCIA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_EMPRESA_SEGUIDORES" Member="MT_EMPRESA_SEGUIDOREs">
+    <Type Name="MT_EMPRESA_SEGUIDORE">
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA_SEGUIDOR" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_MENSAJES" Member="MT_MENSAJEs">
+    <Type Name="MT_MENSAJE">
+      <Column Name="NRO_MENSAJE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_PADRE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FEC_PUBLICADO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_TITULO" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="XDE_CORTA" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="OBS_MEDIA" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MEM_LARGA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EST_VIGENTE" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EST_ADMINISTRADOR" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_TIPO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FEC_LEIDO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_USUARIO_DESTINO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NRO_EMPRESA_DESTINO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MT_MENSAJE_MT_USUARIO" Member="MT_USUARIOs" ThisKey="NRO_USUARIO" OtherKey="NRO_USUARIO" Type="MT_USUARIO" />
+      <Association Name="MT_MENSAJE_MT_TIPO" Member="MT_TIPOs" ThisKey="NRO_TIPO" OtherKey="NRO_TIPO" Type="MT_TIPO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_EMPLEO_TIPOS" Member="MT_EMPLEO_TIPOs">
+    <Type Name="MT_EMPLEO_TIPO">
+      <Column Name="XDE_NOMBRE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_TIPO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_EMPLEO_CATEGORIAS" Member="MT_EMPLEO_CATEGORIAs">
+    <Type Name="MT_EMPLEO_CATEGORIA">
+      <Column Name="XDE_NOMBRE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_CATEGORIA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_EMPLEO_OFERTAS" Member="MT_EMPLEO_OFERTAs">
+    <Type Name="MT_EMPLEO_OFERTA">
+      <Column Name="NRO_OFERTA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDE_TITULO" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="MEM_LARGA" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FEC_DESDE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FEC_HASTA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EST_ADMINISTRADOR" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="MT_EMPLEO_OFERTA_MT_EMPLEO" Member="MT_EMPLEOs" ThisKey="NRO_OFERTA" OtherKey="NRO_OFERTA" Type="MT_EMPLEO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_EMPLEO" Member="MT_EMPLEOs">
+    <Type Name="MT_EMPLEO">
+      <Column Name="NRO_EMPLEO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_TIPO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_CATEGORIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_OFERTA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MT_EMPLEO_OFERTA_MT_EMPLEO" Member="MT_EMPLEO_OFERTA" ThisKey="NRO_OFERTA" OtherKey="NRO_OFERTA" Type="MT_EMPLEO_OFERTA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MT_VOTOS" Member="MT_VOTOs">
+    <Type Name="MT_VOTO">
+      <Column Name="NRO_PUNTAJE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRO_EMPRESA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_VOTOS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRO_SUMA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MT_VOTO_MT_EMPRESA" Member="MT_EMPRESAs" ThisKey="NRO_EMPRESA" OtherKey="NRO_EMPRESA" Type="MT_EMPRESA" />
+    </Type>
+  </Table>
+</Database>

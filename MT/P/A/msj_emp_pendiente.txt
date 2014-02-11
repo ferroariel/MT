@@ -1,0 +1,10 @@
+﻿
+Estimado %userid%,
+
+Recientemente has agregado a nuestro sistema la empresa %empresa%.
+Te informamos que recibirás un mensaje privado indicándote cuando la misma se encuentre ya disponible en nuestro sistema.
+
+Cordialmente,
+
+El equipo de %sitio%
+%sitio_url%

@@ -1,0 +1,83 @@
+.mt-actividad
+{
+    -webkit-user-select: none;
+    display:block !important;
+    overflow:visible !important;
+    height:auto !important;
+    position:relative;    
+    
+}
+
+.mt-actividad .actividad-contenedor
+{
+    background:#fff url(/Content/img/w.header.png) no-repeat 0 0;    
+    /*overflow:hidden;*/
+    font:normal normal 11px Tahoma;    
+}
+.mtact-head 
+{
+    height:40px;
+    text-align:center;
+    line-height:40px;
+    width:100%;
+    display:block;
+    text-align:right;
+    }
+ul.mtact-bar 
+{
+    margin:0;
+    padding:10px;    
+    border:solid 1px #e3e3e3;
+    border-bottom:solid 3px orange;
+    border-top-width:0;
+    display:block;    
+    list-style-type:none;
+    background-color:#f6f6f6;
+    -webkit-border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    }
+ul.mtact-bar li 
+{
+    padding:0;
+    margin:0;    
+    display:inline-block;    
+    vertical-align:text-top;
+    width:47%;
+    /*min-width:100px*/
+    height:auto;        
+    clear:left;
+    margin-bottom:10px;
+    }
+ul.mtact-bar li:nth-child(even) 
+{
+    margin-left:3px;
+    }
+ul.mtact-bar li:nth-child(odd) 
+{
+    margin-right:3px;
+    }    
+ul.mtact-bar li a,
+.mtact-head a
+{
+    color:orange;    
+    /*font-weight:bold;*/
+    }
+ul.mtact-bar li img 
+{
+    width:auto;
+    max-width:90%;
+    max-height:40px;    
+    display:block;
+    outline:solid 3px #fff;
+    border:solid 1px orange;
+    margin:0.5em 0 0 0;
+    }
+ul.mtact-bar li abbr 
+{
+    color:Silver;    
+    display:block;
+    }

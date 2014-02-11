@@ -1,0 +1,17 @@
+﻿{
+	"sProcessing": "Cargando...",
+	"sLengthMenu": "_MENU_ registros",
+	"sZeroRecords": "No se encontraron resultados",
+	"sInfo": "_START_ a _END_ de _TOTAL_ rrrrregistros",
+	"sInfoEmpty": "0 de 0 de 0 empresas",
+	"sInfoFiltered": "(gefiltert von _MAX_  Einträgen)",
+	"sInfoPostFix": "",
+	"sSearch": "Buscar",
+	"sUrl": "",
+	"oPaginate": {
+		"sFirst":    "&lt;&lt;",
+		"sPrevious": "&lt;",
+		"sNext":     "&gt;",
+		"sLast":     "&gt;&gt;"
+	}
+}
